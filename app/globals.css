@@ -1,0 +1,221 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: #7C3AED;
+  --color-primary-light: #A78BFA;
+  --color-secondary: #06B6D4;
+  --color-accent: #F59E0B;
+  --color-danger: #EF4444;
+  --color-success: #10B981;
+  --color-bg-base: #030712;
+  --color-bg-card: #0F1629;
+  --color-bg-card-hover: #151d35;
+  --color-border: #1E2D4A;
+  --color-border-hover: #7C3AED;
+  --color-text-primary: #F1F5F9;
+  --color-text-secondary: #94A3B8;
+  --color-text-muted: #475569;
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-syne);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+:root {
+  --background: #030712;
+  --foreground: #F1F5F9;
+  --gradient-primary: linear-gradient(135deg, #7C3AED, #06B6D4);
+  --gradient-card: linear-gradient(145deg, #0F1629, #151d35);
+  --glow-purple: 0 0 40px rgba(124, 58, 237, 0.3);
+  --glow-cyan: 0 0 40px rgba(6, 182, 212, 0.3);
+  --glow-card: 0 8px 32px rgba(124, 58, 237, 0.15);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #1E2D4A #030712;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #030712;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #1E2D4A;
+  border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #7C3AED;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass morphism */
+.glass {
+  background: rgba(15, 22, 41, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+}
+
+/* Glow card */
+.glow-card {
+  background: var(--gradient-card);
+  border: 1px solid #1E2D4A;
+  transition: all 0.3s ease;
+}
+
+.glow-card:hover {
+  border-color: #7C3AED;
+  box-shadow: var(--glow-card);
+  transform: translateY(-2px);
+}
+
+/* Gradient border */
+.gradient-border {
+  background: #0F1629;
+  border-radius: 12px;
+  border: 1px solid rgba(124, 58, 237, 0.3);
+}
+
+/* Animated gradient mesh for hero */
+.gradient-mesh {
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(6, 182, 212, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 40% 80%, rgba(124, 58, 237, 0.08) 0%, transparent 50%),
+    #030712;
+  animation: meshShift 10s ease-in-out infinite alternate;
+}
+
+@keyframes meshShift {
+  0% {
+    background-position: 0% 0%, 100% 0%, 0% 100%;
+  }
+  100% {
+    background-position: 100% 100%, 0% 100%, 100% 0%;
+  }
+}
+
+/* Floating orbs */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.4;
+  animation: float 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.orb-purple {
+  background: #7C3AED;
+}
+
+.orb-cyan {
+  background: #06B6D4;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  25% { transform: translateY(-20px) translateX(10px); }
+  50% { transform: translateY(-40px) translateX(-10px); }
+  75% { transform: translateY(-20px) translateX(15px); }
+}
+
+/* Grid pattern */
+.grid-pattern {
+  background-image:
+    linear-gradient(rgba(124, 58, 237, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124, 58, 237, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Progress bar shimmer */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #7C3AED 0%, #06B6D4 50%, #7C3AED 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+/* Count up animation */
+@keyframes countPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* Ad slots */
+.ad-slot {
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed #1E2D4A;
+  border-radius: 8px;
+  color: #475569;
+  font-size: 0.75rem;
+  margin: 1.5rem 0;
+}
+
+/* Pill badge */
+.pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  background: rgba(15, 22, 41, 0.8);
+  border: 1px solid rgba(124, 58, 237, 0.3);
+}
+
+/* Dropzone */
+.dropzone-active {
+  border-color: #7C3AED !important;
+  box-shadow: 0 0 30px rgba(124, 58, 237, 0.3);
+  background: rgba(124, 58, 237, 0.05) !important;
+}
+
+/* Category pills scrollbar */
+.category-scroll::-webkit-scrollbar {
+  height: 4px;
+}
+
+.category-scroll::-webkit-scrollbar-thumb {
+  background: #1E2D4A;
+  border-radius: 4px;
+}
+
+/* Selection */
+::selection {
+  background: rgba(124, 58, 237, 0.3);
+  color: #F1F5F9;
+}
