@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-const BASE_URL = "https://toolnest.vercel.app";
+const BASE_URL = "https://toolnest-vert.vercel.app";
 
 export function generateToolMetadata(
   toolName: string,

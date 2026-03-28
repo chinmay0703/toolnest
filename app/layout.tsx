@@ -23,7 +23,7 @@ const syne = Syne({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://toolnest.vercel.app"),
+  metadataBase: new URL("https://toolnest-vert.vercel.app"),
   title: {
     template: "%s | ToolNest — Free Online Tools",
     default: "ToolNest — 453+ Free Tools. What AI Talks About, We Do.",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     title: "ToolNest — 453+ Free Tools. What AI Talks About, We Do.",
     description:
       "Free online tools for PDF, image, text, developer, calculator and more. No signup required.",
-    url: "https://toolnest.vercel.app",
+    url: "https://toolnest-vert.vercel.app",
   },
   twitter: {
     card: "summary_large_image",
