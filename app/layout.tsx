@@ -62,8 +62,7 @@ export default function RootLayout({
       className={`${inter.variable} ${jetbrainsMono.variable} ${syne.variable} antialiased`}
     >
       <head>
-        {/* Replace ca-pub-XXXXXXXXXXXXXXXX with your AdSense publisher ID */}
-        {/* <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossOrigin="anonymous"></script> */}
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4135912405031647" crossOrigin="anonymous"></script>
       </head>
       <body className="min-h-screen flex flex-col bg-bg-base text-text-primary">
         <Navbar />
